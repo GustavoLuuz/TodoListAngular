@@ -3,7 +3,7 @@
 <ul class="animated flipInX" *ngIf="mode=='list'">
   <p class="text-center" *ngIf="todos.length==0"><small>Não tem nenhuma tarefa hoje!</small></p>
   <li *ngFor="let todo of todos">
-    <span [style.textDecoration]="todo.done ? 'line-through' : 'none'">{{todo.title}}</span>
+    <span [style.textDecoration]="todo.done ? 'line-through' : 'none'">{{todo.title | capitalize}}</span>
     <button *ngIf="!todo.done" (click)="markAsDone(todo)"><i class="far fa-check-circle"></i></button>
     <button *ngIf="todo.done" (click)="markAsUndone(todo)"><i class="fas fa-check-circle"></i></button> 
     <button (click)="remove(todo)"><i class="far fa-trash-alt"></i> </button>
